@@ -6,7 +6,8 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "#types": ["./src/@types/types.d"]
     }
   },
   "include": [
