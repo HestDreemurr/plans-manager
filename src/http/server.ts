@@ -27,6 +27,15 @@ app.register(fastifySwagger, {
       descripion: "API for managing subscriptions in a SaaS system.",
       version: "1.0.0"
     },
+    servers: [
+      {
+        url: "http://localhost:3333",
+        description: "Development server"
+      }
+    ],
+    tags: [
+      { name: "customers", description: "Customer auth end-points" }
+    ],
     components: {
       securitySchemes: {
         bearerAuth: {

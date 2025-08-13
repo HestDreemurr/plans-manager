@@ -1,19 +1,14 @@
-import { describe, it, expect, afterAll } from "vitest";
+import { describe, it, expect } from "vitest";
 import { app } from "@/http/server";
 import request from "supertest";
-import { prisma } from "@/lib/prisma";
 
 describe("POST /sign-in", () => {
-  afterAll(async () => {
-    await prisma.customer.deleteMany();
-  });
-  
   it("should successfully create an customer", async () => {
     const response = await request(app.server)
       .post("/sign-in")
       .send({
         name: "John Doe",
-        email: "johnd@gmail.com",
+        email: "johndoe@gmail.com",
         password: "john123"
       });
       
@@ -25,7 +20,7 @@ describe("POST /sign-in", () => {
       .post("/sign-in")
       .send({
         name: "John Doe",
-        email: "johnd@gmail.com",
+        email: "johndoe@gmail.com",
         password: "john123"
       });
       
